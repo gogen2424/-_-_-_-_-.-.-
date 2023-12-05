@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать заявку</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="vertical-center">
+        <div class="times">
+            <div id="current-time"></div>
+            <div id="current-date"></div>
+            {% if session.logged_in %}
+        </div>
+    </div>
+    <div class="user-info">Пользователь: {{ session.username }}</div>
+    <div class="user-info">
+        <div>
+            <a href="/logout">Выйти</a>
+        </div>
+    </div> 
+    {% endif %}
+    <h1>Редактировать заявку</h1>
+    <form class="create-form" method="POST">
+        <label for="request_number">Номер заявки:</label>
+        <input class="input-field" type="text" name="request_number" value="{{ request.request_number }}"><br>
+
+        <label for="request_date">Дата добавления:</label>
+        <input class="input-field" type="text" name="request_date" value="{{ request.request_date }}"><br>
+
+        <label for="equipment_name">Наименование оборудования:</label>
+        <input class="input-field" type="text" name="equipment_name" value="{{ request.equipment_name }}"><br>
+
+        <label for="fault_type">Тип неисправности:</label>
+        <input class="input-field" type="text" name="fault_type" value="{{ request.fault_type }}"><br>
+
+        <label for="description">Описание проблемы:</label><br>
+        <textarea class="input-field" name="description" rows="4">{{ request.description }}</textarea><br>
+
+        <label for="client_name">Клиент:</label>
+        <input class="input-field" type="text" name="client_name" value="{{ request.client_name }}"><br>
+
+        <label for="status">Статус:</label>
+        <select class="input-field" name="status">
+            <option value="в ожидании" {% if request.status == 'в ожидании' %}selected{% endif %}>В ожидании</option>
+            <option value="в работе" {% if request.status == 'в работе' %}selected{% endif %}>В работе</option>
+            <option value="выполнено" {% if request.status == 'выполнено' %}selected{% endif %}>Выполнено</option>
+        </select><br>
+
+        <label for="assigned_to">Ответственный:</label>
+        <input class="input-field" type="text" name="assigned_to" value="{{ request.assigned_to }}"><br>
+
+        <input type="submit" value="Сохранить">
+    </form>
+</body>
+</html>

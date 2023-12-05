@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать новую заявку</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='Create_request.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="vertical-center">
+        <div class="times">
+            <div id="current-time"></div>
+            <div id="current-date"></div>
+            {% if session.logged_in %}
+        </div>
+    </div>
+    <div class="user-info">Пользователь: {{ session.username }}</div>
+    <div class="user-info">
+        <div>
+            <a href="/logout">Выйти</a>
+        </div>
+    </div> 
+    {% endif %}
+    <div id = "label">
+        <h1>Создать новую заявку</h1>
+        <form method="POST" action="/create" class="create-form">
+            <label1 for="request_number">Номер заявки:</label1>
+            <input type="text" name="request_number" class="input-field1 dark-field" required><br>
+    
+            <label1 for="request_date">Дата добавления:</label1>
+            <input type="text" name="request_date" class="input-field1 dark-field" required><br>
+    
+            <label1 for="equipment_name">Наименование оборудования:</label1>
+            <input type="text" name="equipment_name" class="input-field1 dark-field" required><br>
+    
+            <label1 for="fault_type">Тип неисправности:</label1>
+            <input type="text" name="fault_type" class="input-field1 dark-field" required><br>
+    
+            <label1 for="description">Описание проблемы:</label1><br>
+            <textarea name="description" class="input-field1 dark-field" rows="4" required></textarea><br>
+    
+            <label1 for="client_name">Клиент:</label1>
+            <input type="text" name="client_name" class="input-field1 dark-field" required><br>
+    
+            <label1 for="status">Статус:</label1>
+            <select name="status" class="input-field1 dark-field" required>
+                <option value="в ожидании">В ожидании</option>
+                <option value="в работе">В работе</option>
+                <option value="выполнено">Выполнено</option>
+            </select><br>
+    
+            <input type="submit" value="Создать" class="submit-button">
+        </form>
+    </div>
+ 
+</body>
+</html>

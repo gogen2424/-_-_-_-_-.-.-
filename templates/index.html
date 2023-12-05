@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Учет заявок на ремонт оборудования</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+
+        
+    <div id="vertical-center">
+        <div class="times">
+            <div id="current-time"></div>
+            <div id="current-date"></div>
+            {% if session.logged_in %}
+        </div>
+    </div>
+    <div id = "user">
+        <div id = "user-info">
+    <div class="user-info">Пользователь: {{ session.username }}</div>
+    <div class="user-info">
+        <div>
+            <a href="/logout">Выйти</a>
+        </div>
+    </div>  
+</div> 
+ 
+    {% endif %}
+    
+    
+    <form method="POST" action="/search">
+        <h1>Список заявок на ремонт оборудования</h1>
+        <label for="search_query">Поиск по номеру или параметрам:</label>
+        <input type="text" name="search_query">
+        <input type="submit" value="Найти">
+    </form>
+
+    </div>
+    
+    <ul>
+        {% for request in requests %}
+            <li id="request-item">
+                <div id="request-details">
+                    Заявка № {{ request.request_number }} ({{ request.request_date }})<br>
+                    Оборудование: {{ request.equipment_name }}<br>
+                    Тип неисправности: {{ request.fault_type }}<br>
+                    Описание проблемы: {{ request.description }}<br>
+                    Клиент: {{ request.client_name }}<br>
+                    Статус: {{ request.status }}<br>
+                    {% if request.assigned_to %}
+                        Ответственный: {{ request.assigned_to }}
+                    {% else %}
+                        <form method="POST" action="/assign/{{ request.id }}">
+                            <label for="assigned_to">Назначить ответственного:</label>
+                            <input type="text" name="assigned_to">
+                            <input type="submit" value="Назначить">
+                        </form>
+                    {% endif %}
+                    <br>
+                    <a href="/edit/{{ request.id }}">Редактировать заявку</a>
+                    <form method="POST" action="{{ url_for('delete_request', request_id=request.id) }}" onsubmit="return confirm('Вы уверены, что хотите удалить эту заявку?');">
+                        <button type="submit" class="delete-request-button">Удалить заявку</button>
+                    </form>
+                </div>
+                <div id="comment-section">
+                    <h3>Комментарии:</h3>
+                    <ul>
+                        {% for comment in request.comments %}
+                            <li>
+                                {{ comment.text }}
+                                {% if session['username'] == 'admin' %}
+                                    <form method="POST" action="/delete_comment/{{ comment.id }}">
+                                        <input type="submit" value="Удалить" class="delete-button">
+                                    </form>
+                                {% endif %}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>                             
+            </li>
+        {% endfor %}
+    </ul>
+    <form method="POST">
+        <div id="button-container">
+            <button type="button" onclick="location.href='http://127.0.0.1:5000/statistics'" id = "buttons">Статистика работы</button>
+            <a type="button" href='/create_request' id = "buttons" >Создать новую заявку</a>
+            <button type="button" onclick="location.href='http://127.0.0.1:5000/create_review'" id = "buttons" >Форум</button>
+            <button type="button" onclick="location.href='http://127.0.0.1:5000/create_masters'" id = "buttons" >Наши мастера</button>
+        </div>
+    </form>
+      
+</body>
+</html>

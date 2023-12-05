@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styleReview.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id = "discussioons">Обсуждения</h1>
+        <form method="POST" action="{{ url_for('reviews', review_id=request.id) }}">
+        {%for el in articles%}
+        <div id = "review">
+            <h2 id = "intro">{{ el.intro }}</h2>
+            <h4 id = "text">{{el.rev_text}}</h4>
+            <a href="/reviews/{{el.id}}" id = "butt">Удалить</a> 
+        </div>
+        {%endfor%}
+    
+</body>
+</html>

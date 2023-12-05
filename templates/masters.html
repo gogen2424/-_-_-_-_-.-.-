@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='masters.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="{{ url_for('masters', master_id=request.id) }}">
+        {%for el in articles%}
+        <div id = "masters_form">
+            <div id = "masters">
+                <h2 id = "name">{{ el.name }}</h2>
+                <h4 id = "level">{{el.level}}</h4>
+                <h4 id = "description">{{el.description}}</h4>
+                <a href="/masters/{{el.id}}" id = "butt">Редактировать Форму</a>
+            </div>
+           
+        </div>
+        {%endfor%}
+    </form>
+    
+</body>
+</html>

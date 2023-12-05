@@ -1,0 +1,52 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    
+     height: 100vh;
+}
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+.dark-field {
+    color: white; /* Белый цвет текста в полях ввода */
+}
+.input-field1 {
+    display: block; /* Делаем поля ввода блочными элементами, чтобы каждый находился на новой строке */
+    width: 87%; /* Ширина 100% для занимания всей доступной ширины */
+    margin-left:50px;
+    margin-right:300px;
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
+    padding: 10px; /* Внутренний отступ для полей ввода */
+    border: none; /* Граница полей ввода */
+    border-radius: 5px; /* Скругление углов */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+}
+#label{
+    background-color:white;
+    margin:20px 180px 20px 80px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    box-shadow:  0 0 25px aqua
+}
+.submit-button
+{
+    color: white;
+    background-color:rgba(6, 15, 12, 0.514);
+    border-radius: 25px;
+    padding: 20px;
+}

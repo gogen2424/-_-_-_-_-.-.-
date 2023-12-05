@@ -1,0 +1,67 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(-45deg, #5e0a80, rgb(152, 9, 209), #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    background-attachment: fixed;
+    
+     height: 100vh;
+}
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+#master_form{
+    padding: 10px;
+    border-radius:10px;
+    margin:100px 100px 110px 0px;
+    font-size: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+#master_text{
+    font-size: 30px;
+}
+#butt{
+    background: linear-gradient(-45deg, #5e0a80, rgb(152, 9, 209), #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    border-radius:10px;
+    padding: 10px;
+    font-size: 23px;
+    margin-top: 20px;
+}
+#butt2{
+    background: linear-gradient(-45deg, #5e0a80, rgb(152, 9, 209), #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    border-radius:10px;
+    padding: 10px;
+    font-size: 23px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#input{
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 23px;
+}
+#input2{
+  background: rgba(255, 255, 255, 0.1);
+  height: 300px;
+  width: 700px;
+  font-size: 23px;
+}

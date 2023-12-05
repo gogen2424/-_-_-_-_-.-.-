@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создать новую заявку</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style_reviews.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div id = "review_form">
+        <h1 id = "rev1">Форма для заполнения сообщения:</h1>
+            <form method="POST" action="/create_review">
+                <h2 id = "rev2">Имя:</h2>
+                <input type = "text" name = "intro" id = "intro" class = "form-control" height = "40px" width = "90px"><br>
+                <h2 id = "rev2">Cообщения:</h2><br>
+                <textarea type = "text" name = "text" id = "text" class = "form-control" height = "40px" width = "90px"></textarea><br>
+                <input type = "submit" name = "submit" id = "submit" class = "btn btn-success" content ="Отправить">
+            </form>
+        </div>
+</body>
+</html>

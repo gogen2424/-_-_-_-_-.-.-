@@ -1,0 +1,440 @@
+/* Основной контейнер страницы */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #3498db, #e74c3c);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+/* Стили для контейнера формы */
+.login-form {
+    text-align: center; /* Центрирование текста по горизонтали */
+    max-width: 300px; /* Максимальная ширина контейнера формы */
+    margin: 0 auto; /* Автоматический отступ по горизонтали для центрирования */
+}
+
+/* Стили для меток полей ввода */
+.input-label {
+    display: block; /* Делаем метки блочными элементами, чтобы каждый находился на новой строке */
+    width: 100%; /* Ширина 100% для занимания всей доступной ширины */
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 16px; /* Размер шрифта */
+}
+
+/* Стили для полей ввода */
+.input-field {
+    display: block; /* Делаем поля ввода блочными элементами, чтобы каждый находился на новой строке */
+    width: 100%; /* Ширина 100% для занимания всей доступной ширины */
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
+}
+
+/* Стили для контейнера формы */
+.create-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+    margin-left: 20px;
+}
+
+/* Стили для меток полей ввода */
+.input-label1 {
+    display: block; /* Делаем метки блочными элементами, чтобы каждый находился на новой строке */
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
+    font-weight: bold; /* Жирный шрифт для меток */
+    
+}
+
+/* Стили для полей ввода */
+.input-field1 {
+    display: block; /* Делаем поля ввода блочными элементами, чтобы каждый находился на новой строке */
+    width: 100%; /* Ширина 100% для занимания всей доступной ширины */
+    margin-bottom: 10px; /* Отступ снизу для разделения элементов */
+    padding: 10px; /* Внутренний отступ для полей ввода */
+    border: none; /* Граница полей ввода */
+    border-radius: 5px; /* Скругление углов */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+}
+
+/* Стили для полей ввода с темным фоном */
+.dark-field {
+    color: white; /* Белый цвет текста в полях ввода */
+}
+/* Стили для поля "Описание проблемы" */
+textarea[name="description"] {
+    width: 300px; /* Ширина поля "Описание проблемы" */
+    padding: 10px; /* Внутренний отступ */
+    margin-bottom: 10px; /* Отступ снизу */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+    resize: none; /* Запрещаем изменение размера */
+}
+
+/* Стили для кнопки */
+.submit-button {
+    width: 100%; /* Ширина 100% для занимания всей доступной ширины */
+    padding: 10px; /* Внутренний отступ для кнопки */
+    background-color: #3498db; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Заменяем курсор на руку при наведении */
+}
+
+/* Стили для кнопки при наведении */
+.submit-button:hover {
+    background-color: #2980b9; /* Изменяем цвет фона при наведении */
+}
+
+
+/* Стили для кнопки */
+.submit-button {
+    width: 107%; /* Ширина 100% для занимания всей доступной ширины */
+    padding: 10px; /* Внутренний отступ */
+    background-color: #3498db; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 16px; /* Размер шрифта */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Заменяем курсор на руку при наведении */
+}
+
+/* Стили для кнопки при наведении */
+.submit-button:hover {
+    background-color: #2980b9; /* Изменяем цвет фона при наведении */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+/* Заголовок страницы */
+h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Контейнер для контента */
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Навигационная панель */
+nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+/* Таблица */
+table {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: left;
+    color: white;
+}
+
+table th {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-weight: bold; /* Жирный шрифт */
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+/* Ссылки */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* Добавьте стили для элемента .times */
+.times {
+    text-align: center; /* Центрирование текста по горизонтали */
+    font-family: 'Arial', sans-serif; /* Используйте ваш выбранный шрифт */
+    color: white; /* Белый цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 24px; /* Размер шрифта 24 пикселя */
+}
+
+/* Стили для контейнера .vertical-center */
+.vertical-center {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+}
+/* Стиль для левого верхнего угла */
+.user-info {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 10px; /* Отступ сверху */
+    left: 10px; /* Отступ слева */
+    font-family: 'Arial', sans-serif; /* Используйте ваш выбранный шрифт */
+    color: white; /* Белый цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 18px; /* Размер шрифта 18 пикселей */
+}
+/* Стиль для полукруглой рамки и заливки */
+.user-info a {
+    max-width: 800px;
+    border: 2px solid #ec0808; /* Строка синего цвета - это цвет рамки */
+    border-radius: 20px; /* Радиус скругления углов */
+    padding: 5px 15px; /* Отступы внутри рамки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    display: inline-block; /* Делаем ссылку блочным элементом */
+    background-color: hsl(0, 93%, 48%); /* Заливка фона синим цветом */
+    color: white; /* Белый цвет текста */
+    font-weight: bold; /* Жирный стиль */
+    font-size: 16px; /* Размер шрифта 16 пикселей */
+}
+
+.user-info a:hover {
+    background-color: #06f106; /* Изменение цвета фона при наведении */
+    border: 2px solid #06f106; /* Изменение цвета рамки при наведении */
+}
+.user-info div {
+    margin-top: 50px; /* Расстояние сверху */
+}
+
+/* Стили для заявок */
+.request-item {
+    list-style-type: none; /* Убираем маркеры рядом с заявками */
+    display: flex; /* Используем flexbox */
+    justify-content: space-between; /* Распределить элементы по краям контейнера */
+    align-items: center; /* Выровнять элементы по вертикали по центру */
+    margin: 20px 0; /* Отступы между заявками */
+    padding: 15px; /* Внутренний отступ внутри заявки */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    border-radius: 10px; /* Закругление углов заявки */
+    color: white; /* Цвет текста внутри заявки */
+    max-width: 800px; /* Максимальная ширина заявки */
+    margin-left: 40px; /* Автоматический левый отступ */
+    margin-right: auto; /* Автоматический правый отступ */
+}
+.request-details {
+    flex: 1; /* Занимать доступное пространство слева */
+}
+
+/* Стили для комментариев внутри каждой заявки */
+.comment-section {
+    background-color: rgba(0, 0, 0, 0.3); /* Цвет фона комментариев с прозрачностью */
+    border-radius: 5px; /* Закругление углов комментариев */
+    margin-top: 10px; /* Отступ между заявкой и комментариями */
+    padding: 10px; /* Внутренний отступ внутри комментариев */
+    flex: 1; /* Занимать доступное пространство справа */
+    text-align: right; /* Выравнивание текста справа */
+}
+
+/* Добавляем стили для кнопки Удалить */
+.delete-button {
+    background-color: transparent; /* Сделаем фон кнопки прозрачным */
+    border: none; /* Убираем границу */
+    color: red; /* Цвет текста кнопки */
+    cursor: pointer; /* Заменяем курсор при наведении на кнопку */
+    float: center; /* Плавающее расположение кнопки справа */
+    margin-top: 10px; /* Немного поднимем кнопку выше заголовка */
+}
+/* Добавляем стили для кнопки Удалить */
+/* Добавляем стили для кнопки Удалить */
+.delete-button {
+    background-color: red; /* Сделаем фон кнопки прозрачным */
+    border: 1px solid red; /* Граница с красным цветом */
+    cursor: pointer; /* Заменяем курсор при наведении на кнопку */
+    float: center; /* Плавающее расположение кнопки справа */
+    color: white; /* Белый цвет текста */
+    font-size: 18px; /* Размер шрифта 18 пикселей */
+    padding: 5px 10px; /* Отступы внутри кнопки */
+    border-radius: 15px; /* Закругляем углы кнопки */
+    font-weight: bold; /* Жирный шрифт */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+.delete-button:hover {
+    background-color: #06f106; /* Изменяем цвет фона при наведении */
+    color: white; /* Изменяем цвет текста при наведении */
+    border-color: #06f106; /* Изменяем цвет границы при наведении */
+}
+
+/* Стили для текста "Поиск по номеру или параметрам:" */
+label[for="search_query"] {
+    display: block; /* Делаем элемент блочным для корректного отображения стилей */
+    margin-bottom: 10px; /* Отступ снизу */
+    color: white; /* Цвет текста */
+    font-weight: bold; /* Жирный шрифт */
+    margin-left: 40px;
+}
+
+
+/* Стили для поля ввода поиска */
+input[name="search_query"] {
+    width: 60%; /* Ширина поля ввода */
+    padding: 10px; /* Внутренний отступ */
+    margin-right: 10px; /* Отступ справа */
+    margin-left: 40px;
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    
+}
+
+/* Стили для кнопки поиска */
+input[type="submit"] {
+    padding: 10px 20px; /* Внутренний отступ кнопки */
+    background-color: #3498db; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Заменяем курсор на руку при наведении */
+}
+
+/* Стили для кнопки поиска при наведении */
+input[type="submit"]:hover {
+    background-color: #2980b9; /* Изменяем цвет фона при наведении */
+}
+
+/* Стили для кнопки "Редактировать заявку" */
+a[href^="/edit/"] {
+    display: inline-block; /* Делаем текст блочным элементом */
+    padding: 10px 20px; /* Задаем внутренние отступы для кнопки */
+    background-color: #3498db; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 16px; /* Размер шрифта */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    cursor: pointer; /* Заменяем курсор при наведении на кнопку */
+    transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+a[href^="/edit/"]:hover {
+    background-color: #2980b9; /* Изменяем цвет фона кнопки при наведении */
+    color: white; /* Изменяем цвет текста кнопки при наведении */
+}
+/* Стили для кнопок "Статистика работы" и "Создать новую заявку" */
+a[href="/statistics"], a[href="/create_request"] {
+    display: inline-block; /* Делаем кнопки блочными элементами */
+    padding: 10px 20px; /* Задаем внутренние отступы для кнопок */
+    background-color: #3498db; /* Цвет фона кнопок */
+    color: white; /* Цвет текста кнопок */
+    text-decoration: none; /* Убираем подчеркивание ссылок */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 16px; /* Размер шрифта */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы кнопок */
+    cursor: pointer; /* Заменяем курсор при наведении на кнопки */
+    margin-left: 10px; /* Отступ слева между кнопками */
+    transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета при наведении */
+}
+
+a[href="/statistics"]:hover, a[href="/create_request"]:hover {
+    background-color: #2980b9; /* Изменяем цвет фона кнопок при наведении */
+    color: white; /* Изменяем цвет текста кнопок при наведении */
+}
+
+/* Стили для контейнера с кнопками */
+.button-container {
+    text-align: center; /* Выравнивание кнопок по центру */
+    margin-top: 20px; /* Отступ сверху от кнопок */
+}
+/* Стили для кнопки "Удалить заявку" */
+.delete-request-button {
+    display: inline-block; /* Делаем текст блочным элементом */
+    padding: 10px 20px; /* Задаем внутренние отступы для кнопки */
+    background-color: #3498db; /* Цвет фона кнопки */
+    color: white; /* Цвет текста кнопки */
+    text-decoration: none; /* Убираем подчеркивание ссылки */
+    font-weight: bold; /* Жирный шрифт */
+    font-size: 16px; /* Размер шрифта */
+    border: none; /* Убираем границу */
+    border-radius: 5px; /* Закругляем углы кнопки */
+    cursor: pointer; /* Заменяем курсор при наведении на кнопку */
+    transition: background-color 0.3s, color 0.3s; /* Плавное изменение цвета при наведении */
+    margin-left: 2px; /* Отступ слева от окна заявок */
+    margin-top: 14px;
+}
+/* Добавлен стиль для класса "button" */
+.button1 {
+    text-decoration: none; /* Убираем подчеркивание */
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498db; /* Цвет фона кнопки */
+    color: #FFFFFF; /* Цвет текста кнопки */
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold; /* Жирный шрифт */
+    
+}
+
+/* Стили для придания кнопке hover-эффекта */
+.button:hover {
+    background-color: #2980b9; /* Цвет фона кнопки при наведении */
+    
+}
+
+

@@ -1,0 +1,123 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    
+     height: 100vh;
+}
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+#vertical-center{
+    align-items: center;
+    padding:20px ;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 25px;
+    margin: 70px auto 5px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 30%;
+    border-radius: 25px;
+    box-shadow:  0 0 25px aqua
+}
+#request-details{
+    font-size: 20px;
+    list-style-type: none; /* Убираем маркеры рядом с заявками */
+    display: flex; /* Используем flexbox */
+    justify-content: space-between; /* Распределить элементы по краям контейнера */
+    align-items: center; /* Выровнять элементы по вертикали по центру */
+    margin: 20px 0; /* Отступы между заявками */
+    padding: 15px; /* Внутренний отступ внутри заявки */
+    background-color: rgba(0, 0, 0, 0.5); /* Цвет фона с прозрачностью */
+    border-radius: 10px; /* Закругление углов заявки */
+    color: white; /* Цвет текста внутри заявки */
+    max-width: 80%; /* Максимальная ширина заявки */
+    margin: 20px 85px 5px 75px;
+    box-shadow: inset 0 0 20px aqua;
+    flex: 1;
+    border-collapse: collapse;
+    overflow: hidden;
+}
+#main{
+    align-items: center;
+    padding:20px ;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 25px;
+    margin: 70px auto 5px;
+    margin-left: 20px;
+    margin-right: auto;
+    max-width: 80%;
+    border-radius: 25px;
+    box-shadow:  0 0 25px aqua
+}
+#user{
+    align-items: center;
+    padding:20px ;
+    background-color: rgba(255, 255, 255, 0.5);
+    font-size: 25px;
+    margin: 70px auto 5px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    border-radius: 25px;
+    box-shadow:  0 0 25px aqua
+}
+#user-info{
+    align-items: center;
+    padding:20px ;
+    background-color: rgba(255, 255, 255, 0.656);
+    font-size: 18px;
+   
+   
+    max-width: 28%;
+    border-radius: 25px;
+    box-shadow:  0 0 25px rgb(0, 0, 0)
+}
+#button-container
+{
+    align-items: center;
+    padding:20px ;
+    background-color: rgba(13, 11, 11, 0.5);
+    font-size: 25px;
+    margin: 70px auto 5px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    border-radius: 25px;
+    box-shadow:  0 0 25px aqua;
+}
+#buttons{
+    font-size: 17px;
+   color: aliceblue;
+    background-color: rgba(0, 0, 0, 0.667);
+    padding: 10px;
+    margin:40px 50px 30px 0px;
+    margin-left: 30px;
+    margin-top: 30px; 
+    border-radius:15px;
+    border-style: ridge;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.463);
+    max-width: 30%;
+    border-style: ridge;
+}
+#buttons:hover{
+    transition:1s;
+    background-color: #23d5ab;
+    transform: scale(1.2);
+}
+#comment-section{
+    margin: 20px 85px 5px 75px; 
+}
+

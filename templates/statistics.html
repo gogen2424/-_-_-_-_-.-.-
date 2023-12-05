@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Статистика работы отдела обслуживания</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='statistics.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div id="vertical-center">
+        <div class="times">
+            <div id="current-time"></div>
+            <div id="current-date"></div>
+            {% if session.logged_in %}
+        </div>
+    </div>
+    <div id ="user">
+        <div class="user-info">Пользователь: {{ session.username }}</div>
+        <div class="user-info">
+    </div>
+   
+        <div>
+            <a href="/logout">Выйти</a>
+        </div>
+    </div> 
+    {% endif %}
+    <h1>Статистика работы отдела обслуживания</h1>
+    
+    <h2>Статистика по ответственным</h2>
+    <table border ="1">
+        <tr>
+            <th>Ответственный</th>
+            <th>Количество выполненных заявок</th>
+            <th>Среднее время выполнения</th>
+        </tr>
+        {% for responsible, data in statistics.items() %}
+            <tr>
+                <td>{{ responsible }}</td>
+                <td>{{ data.completed_requests_count }}</td>
+                <td>{{ data.average_time }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h2>Статистика по типам неисправностей</h2>
+    <table border="1">
+        <tr>
+            <th>Тип неисправности</th>
+            <th>Количество выполненных заявок</th>
+        </tr>
+        {% for fault_type, count in fault_type_statistics.items() %}
+            <tr>
+                <td>{{ fault_type }}</td>
+                <td>{{ count }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/" id="button1">Вернуться на главную</a> <!-- Добавлен класс "button" -->
+</body>
+</html>

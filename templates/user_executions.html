@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Исполнение заявок</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='StyleUser.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div id="vertical-center">
+        <div class="times">
+            <div id="current-time"></div>
+            <div id="current-date"></div>
+            {% if session.logged_in %}
+        </div>
+    </div>
+    <div class="user-info">Пользователь: {{ session.username }}</div>
+    <div class="user-info">
+        <div>
+            <a href="/logout">Выйти</a>
+        </div>
+    </div> 
+    {% endif %}
+    <h1>Исполнение заявок</h1>
+    
+    <h2>Список заявок</h2>
+    <table border="1">
+        <tr>
+            <th>Номер заявки</th>
+            <th>Дата добавления</th>
+            <th>Оборудование</th>
+            <th>Тип неисправности</th>
+            <th>Описание проблемы</th>
+            <th>Клиент</th>
+            <th>Статус</th>
+            <th>Создатель</th>
+            <th>Добавить комментарий</th>
+            <th>Изменить статус</th>
+            <!-- Здесь вы можете добавить дополнительные столбцы или функциональность для исполнения заявок -->
+        </tr>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.request_number }}</td>
+            <td>{{ request.request_date }}</td>
+            <td>{{ request.equipment_name }}</td>
+            <td>{{ request.fault_type }}</td>
+            <td>{{ request.description }}</td>
+            <td>{{ request.client_name }}</td>
+            <td>{{ request.status }}</td>
+            <td>{{ request.created_by }}</td>
+            <!-- Добавьте здесь кнопки или функциональность для исполнения заявок -->
+            <td>
+                <form method="POST" action="{{ url_for('add_comment', request_id=request.id) }}" >
+                    {{ comment_form.hidden_tag() }}
+                    {{ comment_form.text.label }}
+                    <input type="text" name="text" value="" style="width: 200px; height: 50px;">
+                    <button type="submit">Добавить комментарий</button>
+                </form>               
+            </td>
+            <td>
+                <form method="POST" action="{{ url_for('user_executions') }}">
+                    {{ status_form.hidden_tag() }}
+                    <input type="hidden" name="request_id" value="{{ request.id }}">
+                    {{ status_form.status.label }}
+                    {{ status_form.status() }}
+                    <button type="submit">Изменить статус</button>
+                </form>
+                
+            </td>
+        </tr>
+        {% for comment in request.comments %}
+            <tr>
+                <td colspan="8">
+                    <strong>Комментарий:</strong> {{ comment.text }}<br>
+                    <small>Добавлено: {{ comment.created_at }}</small>
+                </td>
+            </tr>
+        {% endfor %}
+        {% endfor %}
+    </table>
+</body>
+</html>
